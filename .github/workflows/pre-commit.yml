@@ -24,7 +24,5 @@ jobs:
       run: cargo fmt --verbose --manifest-path ./Cargo.toml --all
     - name: Run check
       run: cargo check --verbose --manifest-path ./Cargo.toml --all
-    - uses: actions-rs/clippy-check@v1
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        args: "-- -D warnings --manifest-path ./Cargo.toml --all"
+    - name: Run clippy
+      run: cargo clippy --manifest-path crabspiders/Cargo.toml --all -- -D warnings
