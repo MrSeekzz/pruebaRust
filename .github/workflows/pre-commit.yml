@@ -25,4 +25,4 @@ jobs:
     - name: Run check
       run: cargo check --verbose --manifest-path ./Cargo.toml --all
     - name: Run clippy
-      run: cargo clippy --manifest-path crabspiders/Cargo.toml --all -- -D warnings
+      run: cargo clippy --manifest-path ./Cargo.toml --all -- -D warnings
