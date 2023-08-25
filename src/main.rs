@@ -12,11 +12,7 @@ fn merge_sort_with_print(elements: &mut [u32]) {
     let mut left = 0;
     let mut right = elements.len();
 
-    stack.push(MergeSortStackItem {
-        left,
-        right,
-        level,
-    });
+    stack.push(MergeSortStackItem { left, right, level });
 
     while let Some(item) = stack.pop() {
         left = item.left;
@@ -46,7 +42,6 @@ fn merge_sort_with_print(elements: &mut [u32]) {
     print_elements(elements);
 }
 
-
 fn print_elements(elements: &[u32]) {
     let max_value = *elements.iter().max().unwrap();
     let scale_factor = MAX_BAR_HEIGHT as f32 / max_value as f32;
@@ -62,6 +57,7 @@ fn print_elements(elements: &[u32]) {
 fn main() {
     let mut elements = vec![3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5];
 
+    assert_eq!("a".is_empty(), false);
     println!("Estado inicial:");
     print_elements(&elements);
 
@@ -70,7 +66,6 @@ fn main() {
     println!("Estado final:");
     print_elements(&elements);
 }
-
 
 //fn main() {
 //
