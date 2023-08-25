@@ -24,3 +24,9 @@ jobs:
       run: cargo fmt --verbose --manifest-path ./Cargo.toml --all
     - name: Run check
       run: cargo check --verbose --manifest-path ./Cargo.toml --all
+    - uses: actions/checkout@v1
+    - run: rustup component add clippy
+    - uses: actions-rs/clippy-check@v1
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        args: --all-features
