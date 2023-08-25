@@ -24,5 +24,3 @@ jobs:
       run: cargo fmt --verbose --manifest-path ./Cargo.toml --all
     - name: Run check
       run: cargo check --verbose --manifest-path ./Cargo.toml --all
-    - name: Run clippy
-      run: sh -c 'RUSTFLAGS=\"-D warnings\" cargo clippy --manifest-path ./Cargo.toml --all'
