@@ -46,32 +46,6 @@ fn merge_sort_with_print(elements: &mut [u32]) {
     print_elements(elements);
 }
 
-fn merge(elements: &mut [u32], left: &mut [u32], right: &mut [u32]) {
-    let mut merged: Vec<u32> = Vec::with_capacity(elements.len());
-    let (mut left_idx, mut right_idx) = (0, 0);
-
-    while left_idx < left.len() && right_idx < right.len() {
-        if left[left_idx] <= right[right_idx] {
-            merged.push(left[left_idx]);
-            left_idx += 1;
-        } else {
-            merged.push(right[right_idx]);
-            right_idx += 1;
-        }
-    }
-
-    if left_idx < left.len() {
-        merged.extend_from_slice(&left[left_idx..]);
-    }
-
-    if right_idx < right.len() {
-        merged.extend_from_slice(&right[right_idx..]);
-    }
-
-    elements.copy_from_slice(&merged);
-
-    print_elements(elements);
-}
 
 fn print_elements(elements: &[u32]) {
     let max_value = *elements.iter().max().unwrap();
